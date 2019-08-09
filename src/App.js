@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import axios from 'axios'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import EditGenre from './EditGenre'
 import Genres from './Genres'
@@ -20,10 +20,12 @@ function App() {
     <Router>
       <div>
         <Header />
-        <Route path='/' exact component={Home}/>
-        <Route path='/genres/:id' exact component={EditGenre}/>
-        <Route path='/genres/new' exact component={NewGenre}/>
-        <Route path='/genres' exact component={Genres}/>
+        <Switch>
+          <Route path='/' exact component={Home}/>
+          <Route path='/genres' exact component={Genres}/>
+          <Route path='/genres/new' exact component={NewGenre}/>
+          <Route path='/genres/:id' exact component={EditGenre}/>
+        </Switch>
         <pre>{JSON.stringify(data)}</pre>
       </div>
     </Router>
