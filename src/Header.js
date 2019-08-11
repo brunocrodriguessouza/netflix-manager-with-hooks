@@ -8,15 +8,20 @@ const Header = () => {
 
   return (
     <Navbar color='light' light expand='md'>
-      <NavbarBrand tag={Link} to='/'>Netflix Manager</NavbarBrand>
-      <NavbarToggler onClick={toggle} />
-      <Collapse isOpen={open} navbar>
-        <Nav className='ml-auto' navbar>
-          <NavItem>
-            <NavLink tag={Link} to='/genres' >Genres</NavLink>
-          </NavItem>
-        </Nav>
-      </Collapse>
+      <div className='container'>
+        <NavbarBrand tag={Link} to='/'>Netflix Manager</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={open} navbar>
+          <Nav className='ml-auto' navbar>
+            <NavItem>
+              <NavLink tag={Link} to='/series' >Series</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={Link} to='/genres' >Genres</NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </div>
     </Navbar>
   )
 }
